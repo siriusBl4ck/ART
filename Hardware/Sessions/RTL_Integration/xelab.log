@@ -1,0 +1,19 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/saurav/tools/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -v 0 -debug typical -s a.out.xsim -prj /tmp/xsim.prj.9dXV9h -sourcelibdir . -sourcelibdir /home/saurav/siriusBl4ck/EE_Core/bsc/lib/Libraries -sourcelibdir /home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog -sourcelibext .v -d TOP=mkTb -t work_mkTb.main 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog/main.v" into library work_mkTb
+INFO: [VRFC 10-311] analyzing module main
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/saurav/siriusBl4ck/EE_Core/BlueSpec/RTL_Integration/mkTb.v" into library work_mkTb
+INFO: [VRFC 10-311] analyzing module mkTb
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mkTb' [/home/saurav/siriusBl4ck/EE_Core/BlueSpec/RTL_Integration/mkTb.v:29]
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work_mkTb.myCustomRTL
+Compiling module work_mkTb.mkTb
+Compiling module work_mkTb.main
+Built simulation snapshot a.out.xsim

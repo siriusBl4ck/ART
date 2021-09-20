@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Sep 20 22:33:55 2021
+# Process ID: 55056
+# Current directory: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs
+# Command line: xsim -mode tcl -source {xsim.dir/a.out.xsim/xsim_script.tcl}
+# Log file: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs/xsim.log
+# Journal file: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/a.out.xsim/xsim_script.tcl
+source a.out.xsim.tcl

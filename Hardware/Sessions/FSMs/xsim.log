@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Sep 20 22:33:55 2021
+# Process ID: 55056
+# Current directory: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs
+# Command line: xsim -mode tcl -source {xsim.dir/a.out.xsim/xsim_script.tcl}
+# Log file: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs/xsim.log
+# Journal file: /home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/a.out.xsim/xsim_script.tcl
+# xsim {a.out.xsim} -autoloadwcfg -tclbatch {a.out.xsim.tcl}
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source a.out.xsim.tcl
+## run all
+Enq 10 at time                   15
+Enq 20 at time                   25
+fifo popped data         10 at time                   25
+Enq 30 at time                   35
+fifo popped data         20 at time                   85
+Enq 40 at time                   95
+fifo popped data         30 at time                  145
+fifo popped data         40 at time                  205
+Fifo is now empty, continue...
+$finish called at time : 225 ns : File "/home/saurav/siriusBl4ck/EE_Core/BlueSpec/FSMs/mkTb.v" Line 447
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon Sep 20 22:34:18 2021...

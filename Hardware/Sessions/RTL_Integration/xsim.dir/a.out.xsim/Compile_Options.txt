@@ -1,0 +1,1 @@
+-v "0" -debug "typical" -s "a.out.xsim" -prj "/tmp/xsim.prj.9dXV9h" -sourcelibdir "." -sourcelibdir "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Libraries" -sourcelibdir "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog" -sourcelibext ".v" -d "TOP=mkTb" -t "work_mkTb.main" 
