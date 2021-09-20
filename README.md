@@ -1,4 +1,4 @@
-# ART
+# EC-03 ART
 ART- Accelerator for RayTracing, Electronics Club, CFI, IIT Madras
 
 General Sessions
