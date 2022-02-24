@@ -1,0 +1,18 @@
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /home/saurav/tools/Xilinx/Vivado/2020.1/bin/unwrapped/lnx64.o/xelab -v 0 -debug typical -s sim.xsim -prj /tmp/xsim.prj.e6hk0J -sourcelibdir . -sourcelibdir /home/saurav/siriusBl4ck/EE_Core/bsc/lib/Libraries -sourcelibdir /home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog -sourcelibext .v -d TOP=fpTest_tb -t work_fpTest_tb.main 
+Multi-threading is on. Using 10 slave threads.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog/main.v" into library work_fpTest_tb
+INFO: [VRFC 10-311] analyzing module main
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer/fpTest_tb.v" into library work_fpTest_tb
+INFO: [VRFC 10-311] analyzing module fpTest_tb
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'fpTest_tb' [/home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer/fpTest_tb.v:29]
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work_fpTest_tb.fpTest_tb
+Compiling module work_fpTest_tb.main
+Built simulation snapshot sim.xsim

@@ -1,0 +1,1 @@
+-v "0" -debug "typical" -s "sim.xsim" -prj "/tmp/xsim.prj.e6hk0J" -sourcelibdir "." -sourcelibdir "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Libraries" -sourcelibdir "/home/saurav/siriusBl4ck/EE_Core/bsc/lib/Verilog" -sourcelibext ".v" -d "TOP=fpTest_tb" -t "work_fpTest_tb.main" 

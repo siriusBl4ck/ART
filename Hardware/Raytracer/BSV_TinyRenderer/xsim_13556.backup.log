@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# xsim v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Wed Jan 12 23:26:11 2022
+# Process ID: 13556
+# Current directory: /home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer
+# Command line: xsim -mode tcl -source {xsim.dir/sim.xsim/xsim_script.tcl}
+# Log file: /home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer/xsim.log
+# Journal file: /home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/sim.xsim/xsim_script.tcl
+# xsim {sim.xsim} -autoloadwcfg -tclbatch {sim.xsim.tcl}
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+source sim.xsim.tcl
+## run all
+1017799874
+$finish called at time : 5 ns : File "/home/saurav/siriusBl4ck/EE_Core/ART/BSV_TinyRenderer/fpTest_tb.v" Line 41
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Jan 12 23:26:22 2022...

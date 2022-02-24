@@ -1,6 +1,7 @@
 package rt;
 
 import FloatingPoint::*;
+import RegFile::*;
 
 //params
 typedef 1024 DMEM_SIZE;
@@ -9,26 +10,23 @@ typedef 1024 DMEM_SIZE;
 typedef 3.141592653589793 M_PI;
 typedef 100000000 INFI;
 
-// Type definitions
-typedef FloatingPoint#(11,52) FDouble;
-typedef FloatingPoint#(8,23)  FSingle;
-
-typedef struct {FSingle x; FSingle y; FSingle z;} Vec3f;
-typedef struct {Vec3f center; FSingle radius; FSingle radius2; Vec3f surfaceColor; Vec3f emissionColor; FSingle transparency; FSingle reflection;} Sphere;
+typedef struct {Float x; Float y; Float z;} Vec3f;
+typedef struct {Vec3f center; Float radius; Float radius2; Vec3f surfaceColor; Vec3f emissionColor; Float transparency; Float reflection;} Sphere;
 
 
 // computes the ray intersection for a given ray
 interface trace_ifc;
     method Action putRayAndStart(Vec3f orig, Vec3f dir);
     method ActionValue #(Vec3f) getRGB();
-    method Action memRead(String filename);
 endinterface
 
 module mkTrace(trace_ifc);
     //3d data memory
+    RegFile#(Bit#(5), Bit#(11)) dmem <- mkRegFileLoad ("3d_data.mem");
+    /*
     Reg#(Maybe#(Sphere)) dmem[DMEM_SIZE];
     for (Integer j = 0; j < DMEM_SIZE; j = j + 1) dmem[j] <- mkReg(tagged Invalid);
-    
+    */
     //ray
     Reg#(Vec3f) rayorig <- mkReg(0);
     Reg#(Vec3f) raydir <- mkReg(0);
@@ -39,7 +37,8 @@ module mkTrace(trace_ifc);
     Reg#(Bool) init <- mkReg(False);
 
     //intersection
-    Reg#(FSingle) tnear <- mkReg(0);
+    Reg#(Float) tnear <- mkReg(0);
+    reg#(Bool) intersect <- mkReg(1);
 
     //sphere counter
     Reg#(int) cnt <- mkReg(0);
@@ -47,9 +46,31 @@ module mkTrace(trace_ifc);
 
     rule compute(init && !rdy && (cnt < totSpheres))
         //main ray intersection code goes here
-        
+
         //get sphere
         Sphere currSphere = dmem[cnt];
+
+        // check if ray intersects the sphere
+        Vec3f l;
+        l.x = currSphere.center.x - rayorig.x;
+        l.y = currSphere.center.y - rayorig.y;
+        l.z = currSphere.center.z - rayorig.z;
+        
+        Float tca = (l.x * raydir.x) + (l.y * raydir.y) + (l.z * raydir.z);
+        
+        //ray does not intersect the sphere (ray points away from the direction from ray origin to center)
+        if (tca < 0) intersect <= 0;
+
+        Float d2 = (l.x * l.x) + (l.y * l.y) + (l.z * l.z) - (tca * tca);
+
+        // the distance of ray from center is larger than the radius. no intersections
+        if (d2 > currSphere.radius2) intersect <= 0;
+
+        Float thc = sqrtFP((currSphere.radius2 - d2), Rnd_Zero);
+
+        // t0 and t1 are the two distances along raydir at which intersections happen
+        Float t0 = tca - thc;
+        Float t1 = tca + thc;
 
         cnt <= cnt + 1;
         rdy <= True;
@@ -59,11 +80,6 @@ module mkTrace(trace_ifc);
         rdy <= False;
         rayorig <= orig;
         raydir <= dir;
-    endmethod
-
-    method Action memRead(String filename);
-        //TODO: File reading code goes here
-        init <= True;
     endmethod
 
 endmodule: trace
